@@ -10,63 +10,40 @@
 
 <body>
     <!--javascript-->
-    <script>
-        function getComputerChoice() {
-            let action = Math.floor(Math.random() * (3 - 1 + 1) + 1);
-            if (action == 1) {
-                return "Rock";
-            }
-            else if (action == 2) {
-                return "Paper"
-            }
-            else {
-                return "Scissors"
-            }
-        }
+    <div type="buttons">
+        <button type="button" onclick="playRound('Rock', getComputerChoice())">Rock</button>
+        <button type="button" onclick="playRound('Paper', getComputerChoice())">Paper</button>
+        <button type="button" onclick="playRound('Scissors', getComputerChoice())">Scissors</button>
+    </div>
+    
+    <br>
 
-        function playRound(playerSelection, computerSelection){
-            let playerUP = playerSelection.toUpperCase();
-            let computerUP = computerSelection.toUpperCase();
+    <div type="results">
+        The winner of this round is <span id="roundWinner"></span>
+    </div>
 
-            if (playerUP == "ROCK" && computerUP == "SCISSORS"){
-                return 10;
-                // return "You win! Rock beats Scissors";
-            }
-            else if (playerUP == "ROCK" && computerUP == "ROCK"){
-                return 0;
-                // return "You tie! Rock equals Rock";
-            }
-            else if (playerUP == "ROCK" && computerUP == "PAPER"){
-                return -10;
-                // return "You lose! Paper beats Rock";
-            }
-            else if (playerUP == "PAPER" && computerUP == "ROCK"){
-                return 10;
-                // return "You win! Paper beats Rock";
-            }
-            else if (playerUP == "PAPER" && computerUP == "PAPER"){
-                return 0;
-                //return "You tie! Paper equals Paper";
-            }
-            else if (playerUP == "PAPER" && computerUP == "SCISSORS"){
-                return -10;
-                // return "You lose! Scissors beats Paper";
-            }
-            else if (playerUP == "SCISSORS" && computerUP == "PAPER"){
-                return 10;
-                // return "You win! Scissors beats Paper";
-            }
-            else if (playerUP == "SCISSORS" && computerUP == "SCISSORS"){
-                return 0;
-                // return "You tie! Scissors equals Scissors";
-            }
-            else if (playerUP == "SCISSORS" && computerUP == "ROCK"){
-                return -10;
-                // return "You lose! Rock beats Scissors";
-            }
-        }
+    <br>
 
-        function game(){
+    <div type="score">
+        Player Score: <span id="pScore"></span>
+        <br>
+        Computer Score: <span id="cScore"></span>
+    </div>
+
+    <br>
+
+    <div type="winner">
+        <span id="gameWinner"></span> won overall!
+    </div>
+
+    <script src="new.js">
+
+
+
+
+
+
+        /*function game(){
             let playerScore = 0;
             let computerScore = 0;
 
@@ -89,9 +66,9 @@
             else if (computerScore == 5){
                 return "Computer wins!";
             }
-        }
+        }*/
 
-        console.log(game());
+        // console.log(game());
 
         // const playerSelection = "rock";
         // const computerSelection = getComputerChoice();
